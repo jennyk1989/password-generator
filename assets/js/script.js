@@ -7,7 +7,9 @@ var lowercasePrompt;
 var uppercasePass = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var uppercasePrompt;
 var numericPass = "0123456789";
+var numericPrompt;
 var specialPass = "!@#$%^&*()_+=-";
+var specialPrompt;
 
 //button click to password prompts
 
@@ -80,9 +82,50 @@ function chooseUppercase () {
   return uppercasePrompt;
 }
 //numeric charcters
+/*var numericPass = "0123456789";
+var numericPrompt;*/
 
+function chooseNumeric(){
+  numericPrompt = prompt("Will your password contain numbers?");
+
+  if (numericPrompt = ""){
+    alert ("Please choose Yes or No");
+    chooseNumeric();
+  } else if (numericPrompt = "Yes"){
+    numericPass = true;
+    return numericPrompt;
+  } else if (numericPrompt = "No"){
+    numericPass = false;
+    return numericPrompt;
+  } else {
+    alert ("Please choose Yes or No");
+    chooseNumeric();
+  }
+    
+  return numericPrompt;
+}
 
 //special characters
+/* var specialPass = "!@#$%^&*()_+=-";
+var specialPrompt; */
+
+function chooseSpecial(){
+  specialPrompt = prompt("Will your password contain special characters?");
+
+  if (specialPrompt = ""){
+    alert ("Please choose Yes or No");
+    chooseSpecial();
+  } else if (specialPrompt = "Yes"){
+    specialPass = true;
+  } else if (specialPrompt = "No"){
+    specialPass = false;
+  } else {
+    alert ("Please choose Yes or No");
+    chooseSpecial();
+  }
+    
+  return specialPrompt;
+}
 
 //validate user input & at least 1 character type selected
 
@@ -94,6 +137,10 @@ function generatePassword(){
   console.log(lowercasePrompt);
   chooseUppercase();
   console.log(uppercasePrompt);
+  chooseNumeric();
+  console.log(numericPrompt);
+  chooseSpecial();
+  console.log(specialPrompt);
 }
 
 //password displayed in an alert or written to page
