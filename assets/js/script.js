@@ -1,4 +1,7 @@
 // Assignment code here
+//define variables
+var generateBtn = document.querySelector("#generate");
+var passLength;
 
 //button click to password prompts
 
@@ -7,34 +10,41 @@
 //select criteria for password
 
 //choose length of password (at least 8 characters & < 128 characters)
-function passLength(){
+function chooseLength(){
+  passLength = prompt ("Choose the number of characters in your password (>=8 & <128 characters)");
   if (passLength < 8){
     alert("Password too short")
     
   } else if (passLength > 128) {
     alert("Password too long")
 
+  } else if (passLength = "") {
+    alert ("Password must be at least 8 characters and no more than 128 characters in length")
+  
   } else {
     alert ("follow next steps")
   }
-  passLength ();
+  return passLength;
 }
 //character types (include lowercase, uppercase, etc.?)
 
 //validate user input & at least 1 character type selected
 
-//password generates
+//generate password
+function generatePassword(){
+  chooseLength();
+  console.log(passLength);
+}
 
 //password displayed in an alert or written to page
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = "";
+  password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
