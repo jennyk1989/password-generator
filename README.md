@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator
 
 ## Description
 Fixed a password generator to include certain criteria (to increase security of passwords generated) using JavaScript.
